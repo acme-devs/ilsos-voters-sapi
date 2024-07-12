@@ -36,7 +36,7 @@ sequenceDiagram
     db2-->>api: voter info
     api-->>api:Log response. If db2 access error, then send email to admin
     alt Success Scenario 
-        api-->ui: Status 201 , idtransaction
+        api-->ui: Status 201 , voter info
     end
     alt Error Scenario 
         api-->ui: Status 400 , detail error message
