@@ -17,7 +17,7 @@ This service implements the next API specification: https://anypoint.mulesoft.co
 ## Endpoints
 The service provides the following endpoints:
 
-### POST /v1/voters/voter-registration
+### POST /v1/voters/registration
 Register the address for a voter.
 
 The next diagram shows the business sequence of messages or events exchanged between the several backend systems.
