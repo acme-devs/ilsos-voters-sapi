@@ -7,7 +7,7 @@ Voters System API
 ## Table of contents
 1. [Description](#description)
 1. [Endpoints](#endpoints)
-    1. [POST /v1/voters](#post-v1voters)
+    1. [POST /v1/voters/registration](#post-v1voters)
 
 ## Description
 Description...
