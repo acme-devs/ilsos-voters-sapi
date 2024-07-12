@@ -7,12 +7,12 @@ Voters System API
 ## Table of contents
 1. [Description](#description)
 1. [Endpoints](#endpoints)
-    1. [PATCH /v1/drivers](#patch-v1drivers)
+    1. [POST /v1/voters](#post-v1voters)
 
 ## Description
 Description...
 
-This service implements the next API specification: https://anypoint.mulesoft.com/exchange/0fa744b1-1284-46c5-b23c-0eb98ea787e3/ilsos-drivers-sapi/minor/1.0/
+This service implements the next API specification: https://anypoint.mulesoft.com/exchange/0fa744b1-1284-46c5-b23c-0eb98ea787e3/ilsos-voters-sapi/minor/1.0/
 
 ## Endpoints
 The service provides the following endpoints:
