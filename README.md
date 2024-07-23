@@ -25,20 +25,20 @@ The next diagram shows the business sequence of messages or events exchanged bet
 ```mermaid
 sequenceDiagram
     autonumber
-    participant ui as UI
+    participant eapi as ilsos-addresschange-eapi
     participant api as ilsos-voters-sapi
     participant db2 as DB2
     
-    ui->>api:POST/voter/voters <br>Input: idTransaction,dl,Id,last4ssn,DOB<br>Street,City,State,ZIP and County
+    eapi->>api:POST/voter/voters <br>Input: idTransaction,dl,Id,last4ssn,DOB<br>Street,City,State,ZIP and County
     note over db2:DS_BOE_XREF_EXISTS<br>DS_WEB_AVR
     api-->>api:Dataweave - format records for db2<BR> DS_BOE_XREF_EXISTS STORED PROCEDURE<br>DS_WEB_AVR TABLE
     api-->>db2: Execute and insert 
     db2-->>api: voter info
     api-->>api:Log response. If db2 access error, then send email to admin
     alt Success Scenario 
-        api-->ui: Status 201 , voter info
+        api-->eapi: Status 201 , voter info
     end
     alt Error Scenario 
-        api-->ui: Status 400 , detail error message
+        api-->eapi: Status 400 , detail error message
     end
   ```
