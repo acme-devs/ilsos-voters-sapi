@@ -29,7 +29,7 @@ sequenceDiagram
     participant api as ilsos-voters-sapi
     participant db2 as DB2
     
-    eapi->>api:POST/voter-registration <br>Input: idTransaction,dl,Id,last4ssn,DOB<br>street,city,state,zipCode and county
+    eapi->>api:POST/voter-registration <br>Input: idTransaction,dl,Id,last4ssn,dob<br>street,city,state,zipCode and county
     note over db2:DS_BOE_XREF_EXISTS<br>DS_WEB_AVR
     api-->>api:Dataweave - format records for db2<BR> DS_BOE_XREF_EXISTS STORED PROCEDURE<br>DS_WEB_AVR TABLE
     api-->>db2: Execute and insert 
