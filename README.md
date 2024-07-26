@@ -7,7 +7,7 @@ Voters System API
 ## Table of contents
 1. [Description](#description)
 1. [Endpoints](#endpoints)
-    1. [POST /v1/voter/voters](#post-v1voters)
+    1. [POST /voter-registration](#post-voter-registration)
 
 ## Description
 Description...
@@ -17,8 +17,8 @@ This service implements the next API specification: https://anypoint.mulesoft.co
 ## Endpoints
 The service provides the following endpoints:
 
-### POST /v1/voter/voters
-Register the address for a voter.
+### POST /voter-registration
+Register the user as a voter.
 
 The next diagram shows the business sequence of messages or events exchanged between the several backend systems.
 
@@ -29,7 +29,7 @@ sequenceDiagram
     participant api as ilsos-voters-sapi
     participant db2 as DB2
     
-    eapi->>api:POST/voter/voters <br>Input: idTransaction,dl,Id,last4ssn,DOB<br>Street,City,State,ZIP and County
+    eapi->>api:POST/voter-registration <br>Input: idTransaction,dl,Id,last4ssn,DOB<br>street,city,state,zipCode and county
     note over db2:DS_BOE_XREF_EXISTS<br>DS_WEB_AVR
     api-->>api:Dataweave - format records for db2<BR> DS_BOE_XREF_EXISTS STORED PROCEDURE<br>DS_WEB_AVR TABLE
     api-->>db2: Execute and insert 
@@ -39,6 +39,6 @@ sequenceDiagram
         api-->eapi: Status 201 , voter info
     end
     alt Error Scenario 
-        api-->eapi: Status 400 , detail error message
+        api-->eapi: Status 400 or 500 , detail error message
     end
   ```
